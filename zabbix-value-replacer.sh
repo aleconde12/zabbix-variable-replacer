@@ -32,6 +32,8 @@ sed -i "s|# TLSAccept=unencrypted|TLSAccept=psk|g" ${CONFIG_FILE}
 sed -i "s|# TLSPSKIdentity=|TLSPSKIdentity=${HOST_AGENTE}|g" ${CONFIG_FILE}
 sed -i "s|# TLSPSKFile=|TLSPSKFile=/etc/zabbix/encrypted.key|g" ${CONFIG_FILE}
 
+systemctl restart zabbix-agent2
+
 echo "Ah, recuerda, el nombre del host en zabbix debe ser" 
 echo "${HOST_AGENTE}"
 echo "saludos"
